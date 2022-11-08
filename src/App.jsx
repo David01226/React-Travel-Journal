@@ -5,6 +5,7 @@ import Item from "./components/Item"
 import ItemData from './components/ItemData';
 
 function App() {
+
   const items = ItemData.map(item => {
     return (
       <Item 
@@ -19,16 +20,26 @@ function App() {
     )
   })
 
+  const [searchTerm, setSearchTerm] = React.useState ('');
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  
+
 
   return (
     <div className="app--container">
       <div className="app--wrapper">
           <Header />
-          <Search />
+          <Search onSearch={handleSearch}/>
           {items}
       </div>
     </div>
   )
 }
+
+
 
 export default App
