@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Header from "./components/Header"
+import Search from "./components/Search"
 import Item from "./components/Item"
 import ItemData from './components/ItemData';
 
@@ -23,6 +24,7 @@ function App() {
     <div className="app--container">
       <div className="app--wrapper">
           <Header />
+          <Search />
           {items}
       </div>
     </div>
