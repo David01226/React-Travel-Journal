@@ -6,7 +6,20 @@ import ItemData from './components/ItemData';
 
 function App() {
 
-  const items = ItemData.map(item => {
+  const [searchTerm, setSearchTerm] = React.useState ('');
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredItems = ItemData.filter(remaining => {
+    let country = remaining.Country.toLocaleLowerCase().includes(searchTerm.toLowerCase())
+    let destination = remaining.Destination.toLocaleLowerCase().includes(searchTerm.toLowerCase())
+    return (country || destination) 
+  });
+    
+
+  const items = filteredItems.map(item => {
     return (
       <Item 
           key={item.ID}
@@ -20,11 +33,7 @@ function App() {
     )
   })
 
-  const [searchTerm, setSearchTerm] = React.useState ('');
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  
 
   
 
