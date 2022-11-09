@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Search Bar Component 
+
 export default function Search ({onSearch}) {
 
     return (

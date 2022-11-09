@@ -1,5 +1,8 @@
 import React from 'react'
 
+// Item component which gets passed data from ItemData.jsx from the App component via props, 
+// once the app component has filtered out the data based on the users search input.
+
 export default function Item (props) {
     
     return (
